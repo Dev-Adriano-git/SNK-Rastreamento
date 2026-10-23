@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#0a1220">
+    <title>Administração | SNK Rastreamento</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <header class="bar"><span class="logo-chip"><img src="assets/logo.png" alt="SNK"></span>
+        <h1>Administração</h1>
+        <div><a class="btn" href="dashboard.html">Ver mapa</a> <button class="btn" onclick="sessao.sair()">Sair</button>
+        </div>
+    </header>
+    <main class="wrap">
+        <div class="tabs"><button class="tab on" data-t="c" onclick="aba('c')">Clientes <span class="cnt"
+                    id="pend">0</span></button><button class="tab" data-t="r" onclick="aba('r')">Rastreadores</button>
+        </div>
+        <section class="pg" id="pg-c">
+            <p class="hint">Novos cadastros ficam pendentes até você liberar o acesso.</p>
+            <div class="tbl">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>WhatsApp</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb-c"></tbody>
+                </table>
+            </div>
+        </section>
+        <section class="pg" id="pg-r" hidden>
+            <form id="fr" class="card">
+                <h2>Cadastrar rastreador</h2>
+                <div class="g">
+                    <div><label>IMEI / ID do aparelho</label><input id="imei" required maxlength="20"
+                            placeholder="Ex: 352094081234567"></div>
+                    <div><label>Modelo do rastreador</label><input id="modelo"
+                            placeholder="Ex: GT06, Suntech ST310, Teltonika FMB920"></div>
+                    <div><label>Número do chip</label><input id="chip" placeholder="11999999999"></div>
+                    <div><label>Operadora</label><select id="oper">
+                            <option>Vivo</option>
+                            <option>TIM</option>
+                            <option>Claro</option>
+                            <option>Outra</option>
+                        </select></div>
+                    <div><label>Placa</label><input id="placa" required maxlength="8" placeholder="ABC1D23"></div>
+                    <div><label>Veículo</label><input id="veic" placeholder="Toyota Hilux"></div>
+                    <div style="grid-column:1/-1"><label>Cliente (somente clientes liberados)</label><select id="cli"
+                            required></select></div>
+                </div>
+                <button class="btn btn-primary" style="margin-top:14px;max-width:240px">Cadastrar rastreador</button>
+            </form>
+            <p class="hint">Para o aparelho enviar dados, configure-o (por SMS) com o endereço do seu servidor e a porta
+                do protocolo do modelo. A lista de modelos e portas está em traccar.org/devices.</p>
+            <div class="tbl">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IMEI / ID</th>
+                            <th>Placa</th>
+                            <th>Cliente</th>
+                            <th>Chip</th>
+                            <th>Conexão</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb-r"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+/* Base: variáveis, botões, campos e aviso (usado em todas as telas) */
+:root {
+  --bg: #0a1220;
+  --panel: #111b2e;
+  --panel2: #16233a;
+  --line: #22314d;
+  --text: #e8eef9;
+  --mute: #8ea0bd;
+  --blue: #1d6fe8;
+  --blue2: #4f98ff;
+  --red: #e5322d;
+  --green: #27c47a;
+  --amber: #f0a62b;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font:
+    14px/1.5 "Segoe UI",
+    system-ui,
+    Roboto,
+    sans-serif;
+}
+.logo-chip {
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: inline-flex;
+}
+.logo-chip img {
+  height: 44px;
+  display: block;
+}
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--mute);
+  margin: 0 0 4px;
+}
+input,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+input:focus,
+select:focus,
+.btn:focus-visible {
+  border-color: var(--blue2);
+  box-shadow: 0 0 0 3px rgba(79, 152, 255, 0.25);
+}
+.field {
+  margin-bottom: 14px;
+}
+.row {
+  display: flex;
+  gap: 12px;
+}
+.row > * {
+  flex: 1;
+}
+.btn {
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--text);
+  font: 600 14px inherit;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--blue2);
+}
+.btn-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  width: 100%;
+}
+.btn-primary:hover {
+  background: #1558bd;
+}
+.btn-danger {
+  color: #ff7a76;
+  border-color: #4a2224;
+}
+.btn-ok {
+  color: var(--green);
+  border-color: #17482f;
+}
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel2);
+  border: 1px solid var(--blue);
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: none;
+  z-index: 9999;
+}

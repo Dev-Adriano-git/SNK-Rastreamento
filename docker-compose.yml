@@ -1,0 +1,13 @@
+services:
+  traccar:                      # recebe os dados de mais de 200 modelos de rastreador
+    image: traccar/traccar:latest
+    restart: unless-stopped
+    ports: ["8082:8082", "5001-5150:5001-5150", "5001-5150:5001-5150/udp"]
+    volumes: ["./dados/traccar:/opt/traccar/data", "./dados/traccar-logs:/opt/traccar/logs"]
+  api:
+    build: ./server
+    restart: unless-stopped
+    env_file: .env
+    ports: ["5000:5000"]
+    volumes: ["./dados/api:/data"]
+    depends_on: [traccar]

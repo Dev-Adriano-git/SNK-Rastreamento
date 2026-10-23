@@ -1,0 +1,132 @@
+/* Área do administrador */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  padding-top: calc(12px + env(safe-area-inset-top));
+}
+.bar h1 {
+  font-size: 18px;
+  margin: 0;
+  flex: 1;
+}
+.bar .logo-chip img {
+  height: 32px;
+}
+.bar .btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.tab {
+  background: none;
+  border: 0;
+  color: var(--mute);
+  font: 600 15px inherit;
+  padding: 10px 16px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.tab.on {
+  color: #fff;
+  border-color: var(--blue2);
+}
+.cnt {
+  background: var(--red);
+  color: #fff;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.hint {
+  color: var(--mute);
+  font-size: 13px;
+  margin: 0 0 14px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.card h2 {
+  font-size: 16px;
+  margin: 0 0 14px;
+}
+.g {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.tbl {
+  overflow-x: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+th {
+  color: var(--mute);
+  font-weight: 600;
+  font-size: 12px;
+}
+tr:last-child td {
+  border-bottom: 0;
+}
+.ac {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.ac .btn {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+.bd {
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.ativo,
+.online {
+  background: #12351f;
+  color: #27c47a;
+}
+.pendente,
+.desconhecido {
+  background: #3a2e10;
+  color: #f0a62b;
+}
+.bloqueado,
+.offline {
+  background: #3d1a1a;
+  color: #ff7a76;
+}

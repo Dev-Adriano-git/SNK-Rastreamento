@@ -1,0 +1,54 @@
+/* Login e cadastro */
+.auth {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(10, 18, 32, 0.45), rgba(10, 18, 32, 0.75)),
+    url(../assets/login.jpg) center/cover fixed no-repeat;
+}
+.auth-form {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  padding: 0;
+}
+.auth-box {
+  max-width: none;
+  background: rgba(13, 20, 35, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--blue);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(29, 111, 232, 0.3);
+}
+.auth-box h1 {
+  font-size: 22px;
+}
+.auth-box .logo-chip {
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+}
+.auth-box h1,
+.auth-box .sub {
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 24px 20px;
+  }
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.logo {
+  display: block;
+  margin: 0 auto 8px;
+  height: 84px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(29, 111, 232, 0.55));
+}

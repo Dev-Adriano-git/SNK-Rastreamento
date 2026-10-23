@@ -1,0 +1,251 @@
+/* Painel do cliente */
+body {
+  display: flex;
+  overflow: hidden;
+}
+aside {
+  width: 310px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  z-index: 1200;
+  padding-top: env(safe-area-inset-top);
+}
+.top {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top .logo-chip img {
+  height: 34px;
+}
+.top button {
+  background: none;
+  border: 0;
+  color: var(--mute);
+  cursor: pointer;
+  font: inherit;
+}
+.sum {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+}
+.sum div {
+  flex: 1;
+  background: var(--panel2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--mute);
+}
+.sum b {
+  display: block;
+  font-size: 20px;
+  color: var(--text);
+}
+.q {
+  padding: 0 14px 10px;
+}
+#lista {
+  flex: 1;
+  overflow: auto;
+  padding: 0 10px;
+}
+.v {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.v:hover,
+.v.on {
+  background: var(--panel2);
+  border-color: var(--line);
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+.mov {
+  background: var(--green);
+}
+.par {
+  background: var(--amber);
+}
+.off {
+  background: #6b7a93;
+}
+.v small {
+  color: var(--mute);
+  display: block;
+}
+.v .spd {
+  margin-left: auto;
+  text-align: right;
+  font-weight: 600;
+}
+.adm {
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.adm .btn {
+  font-size: 12px;
+  padding: 9px;
+}
+main {
+  flex: 1;
+  position: relative;
+}
+#map {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+.tools {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top));
+  right: 12px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.tools .btn {
+  background: rgba(17, 27, 46, 0.92);
+  padding: 9px 12px;
+  font-size: 13px;
+}
+#menu {
+  display: none;
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top));
+  left: 12px;
+  z-index: 1000;
+  background: rgba(17, 27, 46, 0.92);
+}
+#det {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  max-width: 520px;
+  z-index: 1000;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  display: none;
+}
+#det .h {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+#det img {
+  height: 46px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+#det .g {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+  color: var(--mute);
+  font-size: 12px;
+}
+#det .g b {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+}
+#det .a {
+  display: flex;
+  gap: 8px;
+}
+.a .btn {
+  flex: 1;
+  padding: 9px;
+}
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  display: grid;
+  place-items: center;
+  font: 700 10px sans-serif;
+  color: #fff;
+  box-shadow: 0 2px 8px #0008;
+}
+dialog {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  width: 340px;
+  padding: 20px;
+}
+dialog::backdrop {
+  background: #000a;
+}
+@media (max-width: 800px) {
+  aside {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 86%;
+    max-width: 330px;
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+  }
+  aside.open {
+    transform: none;
+  }
+  #menu {
+    display: block;
+  }
+  .tools {
+    top: auto;
+    bottom: auto;
+    display: none;
+  }
+  .tools.m {
+    display: flex;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  aside {
+    transition: none;
+  }
+}
+
+.p-mov {
+  animation: pulso 1.8s infinite;
+}
+@keyframes pulso {
+  0% {
+    box-shadow: 0 0 0 0 rgba(39, 196, 122, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgba(39, 196, 122, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p-mov {
+    animation: none;
+  }
+}
